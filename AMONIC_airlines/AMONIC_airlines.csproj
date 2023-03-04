@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\main.ttf" />
+    <None Remove="Resources\Fonts\mainBold.ttf" />
+    <None Remove="Resources\Fonts\mainBoldItalic.ttf" />
+    <None Remove="Resources\Fonts\mainItalic.ttf" />
+    <None Remove="Resources\Fonts\sub.ttf" />
+    <None Remove="Resources\Fonts\subBold.ttf" />
+    <None Remove="Resources\Fonts\subBoldItalic.ttf" />
+    <None Remove="Resources\Fonts\subItalic.ttf" />
+    <None Remove="Resources\Images\Logo%402x.png" />
+    <None Remove="Resources\Images\Logo%404x.png" />
+    <None Remove="Resources\Images\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\main.ttf" />
+    <Resource Include="Resources\Fonts\mainBold.ttf" />
+    <Resource Include="Resources\Fonts\mainBoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\mainItalic.ttf" />
+    <Resource Include="Resources\Fonts\sub.ttf" />
+    <Resource Include="Resources\Fonts\subBold.ttf" />
+    <Resource Include="Resources\Fonts\subBoldItalic.ttf" />
+    <Resource Include="Resources\Fonts\subItalic.ttf" />
+    <Resource Include="Resources\Images\Logo.png" />
+    <Resource Include="Resources\Images\Logo@2x.png" />
+    <Resource Include="Resources\Images\Logo@4x.png" />
+  </ItemGroup>
+
+</Project>
