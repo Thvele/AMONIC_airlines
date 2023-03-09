@@ -30,11 +30,34 @@
                     <ComboBoxItem Content="Все офисы" IsSelected="True" Background="White"/>
                 </ComboBox>
             </StackPanel>
-            <DataGrid Grid.Row="1" Margin="0,10,0,0"/>
+            <DataGrid Name="dg_users"  Grid.Row="1" Margin="0,10,0,0" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Path=LastName}"/>
+                    <DataGridTextColumn Header="Возраст" Binding="{Binding Path=Age}"/>
+                    <DataGridTextColumn Header="Роль" Binding="{Binding Path=Role}"/>
+                    <DataGridTextColumn Header="Почта" Binding="{Binding Path=EmailAddress}"/>
+                    <DataGridTextColumn Header="Офис" Binding="{Binding Path=Office}"/>
+                    <DataGridCheckBoxColumn Header="Active" Binding="{Binding Path=Active}" Visibility="Hidden"/>
+                </DataGrid.Columns>
 
-            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Role}" Value="Administrator">
+                                <Setter Property="Background" Value="LightGreen"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Active}" Value="false">
+                                <Setter Property="Background" Value="Red"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+            </DataGrid>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2">
                 <Button Content="Изменить роль" Height="30" Margin="0,0,60,0" Padding="10,0,10,0" Background="White"/>
-                <Button Content="Включить/Выключить авторизацию" Height="30" Padding="10,0,10,0" Background="White"/>
+                <Button Name="btn_unLock" Content="Включить/Выключить авторизацию" Height="30" Padding="10,0,10,0" Background="White" Click="btn_unLock_Click"/>
             </StackPanel>
 
         </Grid>
